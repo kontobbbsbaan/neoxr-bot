@@ -124,7 +124,7 @@ module.exports = async (client, m) => {
             if (setting.self && !isOwner && !m.fromMe) return
             if (setting.pluginDisable.includes(name)) return client.reply(m.chat, Func.texted('bold', `🚩 Plugin disabled by Owner.`), m)
             if (!m.isGroup && !['owner', 'create_bot'].includes(name) && chats && !isPrem && !users.banned && new Date() * 1 - chats.lastchat < global.timer) continue
-            if (!m.isGroup && !['owner', 'create_bot'].includes(name) && chats && !isPrem && !users.banned && setting.groupmode) return client.sendMessageModify(m.chat, `🚩 Using bot in private chat only for premium user, upgrade to premium plan only Rp. 5,000,- to get 1K limits.\n\nIf you want to buy contact *${prefixes[0]}owner*`, m, {
+            if (!m.isGroup && !['owner', 'create_bot'].includes(name) && chats && !isPrem && !users.banned && setting.groupmode) return client.sendMessageModify(m.chat, `🚩 𝗕𝗼𝘁 𝗱𝗮𝗹𝗮𝗺 𝗺𝗼𝗱𝗲 : 𝗴𝗿𝗼𝘂𝗽 𝗼𝗻𝗹𝘆\nUpgrade ke paket premium\nuntuk akses ke private chat *${prefixes[0]}owner*`, m, {
                largeThumb: true,
                thumbnail: await Func.fetchBuffer('https://telegra.ph/file/c66b9f8811c289f57777f.jpg'),
                url: 'https://chat.whatsapp.com/IqVwUCR7da99553oXJhHed'
