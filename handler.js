@@ -106,7 +106,7 @@ module.exports = async (client, m) => {
             global.db.chats[m.chat].lastseen = new Date() * 1
          }
          if (!commands.includes(command) && matcher.length > 0 && !setting.self) {
-            if (!m.isGroup || (m.isGroup && !groupSet.mute)) return client.reply(m.chat, `🚩 Command you are using is wrong, try the following recommendations :\n\n${matcher.map(v => '➠ *' + (isPrefix ? isPrefix : '') + v.string + '* (' + v.accuracy + '%)').join('\n')}`, m)
+            if (!m.isGroup || (m.isGroup && !groupSet.mute)) return client.reply(m.chat, `🚩 mungkin yang kamu maksud adalah:\n\n${matcher.map(v => '➠ *' + (isPrefix ? isPrefix : '') + v.string + '* (' + v.accuracy + '%)').join('\n')}`, m)
          }
          if (setting.error.includes(command) && !setting.self) return client.reply(m.chat, Func.texted('bold', `🚩 Command _${isPrefix + command}_ disabled.`), m)
          if (commands.includes(command)) {
@@ -126,8 +126,8 @@ module.exports = async (client, m) => {
             if (!m.isGroup && !['owner', 'create_bot'].includes(name) && chats && !isPrem && !users.banned && new Date() * 1 - chats.lastchat < global.timer) continue
             if (!m.isGroup && !['owner', 'create_bot'].includes(name) && chats && !isPrem && !users.banned && setting.groupmode) return client.sendMessageModify(m.chat, `🚩 Using bot in private chat only for premium user, upgrade to premium plan only Rp. 5,000,- to get 1K limits.\n\nIf you want to buy contact *${prefixes[0]}owner*`, m, {
                largeThumb: true,
-               thumbnail: await Func.fetchBuffer('https://telegra.ph/file/0b32e0a0bb3b81fef9838.jpg'),
-               url: 'https://chat.whatsapp.com/Dh1USlrqIfmJT6Ji0Pm2pP'
+               thumbnail: await Func.fetchBuffer('https://telegra.ph/file/c66b9f8811c289f57777f.jpg'),
+               url: 'https://chat.whatsapp.com/IqVwUCR7da99553oXJhHed'
             }).then(() => chats.lastchat = new Date() * 1)
             if (!['me', 'owner'].includes(name) && users && (users.banned || new Date - users.banTemp < global.timer)) return
             if (m.isGroup && !['activation'].includes(name) && groupSet.mute) continue
@@ -202,10 +202,10 @@ module.exports = async (client, m) => {
             if (m.isGroup && !['exec'].includes(name) && groupSet.mute) continue
             if (setting.pluginDisable.includes(name)) continue
             if (!m.isGroup && chats && !isPrem && !users.banned && new Date() * 1 - chats.lastchat < global.timer) continue
-            if (!m.isGroup && chats && !isPrem && !users.banned && setting.groupmode) return client.sendMessageModify(m.chat, `🚩 Using bot in private chat only for premium user, upgrade to premium plan only Rp. 5,000,- to get 1K limits.\n\nIf you want to buy contact *${prefixes[0]}owner*`, m, {
+            if (!m.isGroup && chats && !isPrem && !users.banned && setting.groupmode) return client.sendMessageModify(m.chat, `🚩 𝗕𝗼𝘁 𝗱𝗮𝗹𝗮𝗺 𝗺𝗼𝗱𝗲 : 𝗴𝗿𝗼𝘂𝗽 𝗼𝗻𝗹𝘆\nUpgrade ke paket premium\nuntuk akses ke private chat *${prefixes[0]}owner*`, m, {
                largeThumb: true,
-               thumbnail: await Func.fetchBuffer('https://telegra.ph/file/0b32e0a0bb3b81fef9838.jpg'),
-               url: 'https://chat.whatsapp.com/Dh1USlrqIfmJT6Ji0Pm2pP'
+               thumbnail: await Func.fetchBuffer('https://telegra.ph/file/c66b9f8811c289f57777f.jpg'),
+               url: 'https://chat.whatsapp.com/IqVwUCR7da99553oXJhHed'
             }).then(() => chats.lastchat = new Date() * 1)
             if (setting.self && !['chatAI', 'exec'].includes(name) && !isOwner && !m.fromMe) continue
             if (!m.isGroup && ['chatAI'].includes(name) && body && Func.socmed(body)) continue
