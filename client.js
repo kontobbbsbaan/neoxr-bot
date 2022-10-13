@@ -52,7 +52,7 @@ const connect = async () => {
             credentials.creds.signalIdentities[0].identifierKey = /mongo/.test(process.env.DATABASE_URL) ? Buffer.from(content.creds.signalIdentities[0].identifierKey.buffer) : Buffer.from(credentials.creds.signalIdentities[0].identifierKey)
             state.creds = credentials.creds
          } else {
-            global.db.creds = state.creds
+            //global.db.creds = state.creds
          }
       } catch (e) {
          console.log(e)
